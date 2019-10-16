@@ -15,6 +15,12 @@ export class DepartmentService {
         return await this.repository.find();
     }
 
+    async findByFilterCountry(ID: number): Promise<Department[]> {
+        return await this.repository.find({ where: {
+            country: ID
+        }, relations: ["country"] });
+    }
+
     async findById(ID: number): Promise<Department> {
         return await this.repository.findOne(ID);
     }

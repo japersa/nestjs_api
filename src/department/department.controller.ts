@@ -27,6 +27,18 @@ export class DepartmentController {
         return res.status(HttpStatus.OK).json(department);
     }
 
+    @Get('/country/:id')
+    @ApiImplicitParam({ name: 'id', required: true, type: 'string' })
+    @ApiResponse({ status: 200, description: 'The record has been successfully found.' })
+    @ApiResponse({ status: 401, description: 'Unauthorized access.' })
+    @ApiResponse({ status: 403, description: 'Forbidden.' })
+    public async findByFilterCountry(@Response() res, @Param() param) {
+        const department = await this.departmentService.findByFilterCountry(param.id);
+        return res.status(HttpStatus.OK).json(department);
+    }
+    
+
+
     @Post()
     @ApiResponse({ status: 200, description: 'The record has been successfully created.' })
     @ApiResponse({ status: 401, description: 'Unauthorized access.' })

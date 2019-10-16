@@ -10,5 +10,5 @@ export class CreateCityDto {
 
     @ApiModelProperty()
     @IsNotEmpty()
-    readonly deparment: Department;
+    readonly department: Department;
 }
