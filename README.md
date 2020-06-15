@@ -1,8 +1,8 @@
-Info clients API 
+NestJS API 
 
 ## Description
 
-The info clients API description
+The NestJS API description
 
 ## Installation
 
